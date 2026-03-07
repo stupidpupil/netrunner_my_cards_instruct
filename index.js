@@ -88,7 +88,16 @@ Promise.all([binderPromise, decklistPromise]).then(([binder, decklist]) => {
 	const cardIndex = Array(12).fill(0).map((_, index)=> index);
 
 	pagePairs.forEach((pagePair) => {
+
+
+		const any_needed = pagePair.flat().filter((c) => c?.need_how_many)
+
+		if(any_needed.length == 0){
+			// TODO: Skip page pairs
+		}
+
 		instructionHtml += "<div class='page-pair'>";
+
 
 		[0,1].forEach((pageIdx) => {
 			instructionHtml += "<div class='page'>"
