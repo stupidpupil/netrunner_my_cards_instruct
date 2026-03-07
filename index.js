@@ -120,7 +120,7 @@ Promise.all([binderPromise, decklistPromise]).then(([binder, decklist]) => {
 				instructionHtml += "<div class='" + classes.join(" ") + " '>"
 
 				if(card){
-					instructionHtml += "<img src='https://card-images.netrunnerdb.com/v2/medium/"+ card.code + ".jpg' >"
+					instructionHtml += "<img loading='lazy' src='https://card-images.netrunnerdb.com/v2/medium/"+ card.code + ".jpg' >"
 					instructionHtml += "<div class='info'>"
 					instructionHtml += "<div class='title'>" + card.title + "</div>"
 					instructionHtml	+= "<div class='how_many'>" + card.need_how_many + "</div>"
