@@ -23,7 +23,10 @@ async function fetchDecklist(decklistUUID) {
   return response.json();
 }
 
-let decklistPromise = fetchDecklist("4c4acf96-895c-49ca-b1c6-f4da61787438")
+const paramsString = window.location.search;
+const searchParams = new URLSearchParams(paramsString);
+
+let decklistPromise = fetchDecklist(searchParams.get("deck"))
 
 let pagePairs
 
@@ -125,5 +128,5 @@ Promise.all([binderPromise, decklistPromise]).then(([binder, decklist]) => {
 	})
 
 	$("body").append(instructionHtml)
-
+	$(".card.needed").first().parent()[0].scrollIntoView()
 })
