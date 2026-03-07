@@ -1,0 +1,78 @@
+body{
+   background-color: #222;
+} 
+
+.page-pair{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1200px;
+  margin:auto;
+  margin-top:1em;
+  column-gap: 0.5em;
+}
+
+@media (max-width: 700px){
+  .page-pair{
+    grid-template-columns: 1fr;
+  }
+}
+
+.page{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  background-color: #555;
+  padding: 1em;
+}
+
+.page:first-of-type{
+  border-radius: 0.5% 0px 0px 0.5%;
+}
+
+.page:last-of-type{
+  border-radius: 0px 0.5% 0.5% 0px;
+}
+
+.card{
+  padding: 0.2em;
+  position: relative;
+}
+
+.card img{
+  width: 100%;
+  border-radius: 5%;
+  z-index: 0;
+}
+
+.card.exists img{
+  filter: grayscale(70%) contrast(22%);
+  position: relative;
+}
+
+.card.exists.needed img{
+  filter: unset
+
+}
+
+.card .info{
+  display: none;
+}
+
+.card.exists.needed .info{
+  backdrop-filter: blur(80%);
+  display: block;
+  position: absolute;
+  top: 60%;
+  z-index: 1;
+  padding: 0.2em;
+  background-color: #eee;
+  opacity: 70%;
+  width: calc(100% - 0.8em);
+  text-align: center;
+  font-family: Roboto, D-DIN, sans-serif;
+  font-size: 0.8rem;
+}
+ 
+.card.exists.needed .info .title.title{
+  font-weight: bold;
+}
