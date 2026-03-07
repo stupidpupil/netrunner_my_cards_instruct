@@ -60,14 +60,13 @@ body{
 }
 
 .card.exists.needed .info{
-  backdrop-filter: blur(80%);
+  background-color: #eeeb;
+  backdrop-filter: blur(0.5px) contrast(80%);
   display: block;
   position: absolute;
   bottom: 1.6rem;
   z-index: 1;
   padding: 0.2em;
-  background-color: #eee;
-  opacity: 70%;
   width: calc(100% - 0.8em);
   text-align: center;
   font-family: Roboto, D-DIN, sans-serif;
