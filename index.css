@@ -69,6 +69,8 @@ body{
 }
 
 .card.exists.needed .info{
+  color: #333;
+  text-decoration: none;
   background-color: #eeeb;
   backdrop-filter: blur(0.5px) contrast(80%);
   display: block;

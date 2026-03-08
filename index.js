@@ -151,11 +151,13 @@ Promise.all([binderPromise, decklistPromise]).then(([binder, decklist]) => {
 						imageUrl = "https://card-images.netrunnerdb.com/v2/large/"+ card.code + ".jpg"
 					}
 
-					instructionHtml += "<img loading='lazy' src='" + imageUrl + "' >"
+					instructionHtml += "<img loading='lazy' src='" + imageUrl + "'>"
+					instructionHtml += "<a href='https://netrunnerdb.com/en/card/" + card.code + "' target = '_blank'>"
 					instructionHtml += "<div class='info'>"
 					instructionHtml += "<div class='title'>" + card.title + "</div>"
 					instructionHtml	+= "<div class='how_many'>" + card.need_how_many + "</div>"
 					instructionHtml += "</div>"
+					instructionHtml += "</a>"
 				}else{
 					instructionHtml += "<img src='blank.png' >"					
 				}
