@@ -1,6 +1,14 @@
 body{
-   background-color: #222;
-} 
+  background-color: #222;
+  font-family: Roboto, D-DIN, sans-serif;
+}
+
+#progress-info{
+  display: block;
+  color: white;
+  max-width: 20em;
+  margin: auto;
+}
 
 .page-pair{
   display: grid;
@@ -70,7 +78,6 @@ body{
   padding: 0.2em;
   width: calc(100% - 0.8em);
   text-align: center;
-  font-family: Roboto, D-DIN, sans-serif;
   font-size: 0.8rem;
 }
  

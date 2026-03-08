@@ -30,7 +30,30 @@ let decklistPromise = fetchDecklist(searchParams.get("deck"))
 
 let pagePairs
 
+binderPromise.then(() => {
+	$("#fetching-binder .status").text("✓")
+}).catch(() => {
+	$("#fetching-binder .status").text("✘")
+})
+
+decklistPromise.then((decklist) => {
+
+	if(decklist.success){
+		$("#fetching-decklist .status").text("✓")
+	}else{
+		$("#fetching-decklist .status").text("✘")
+	}
+
+}).catch(() => {
+	$("#fetching-decklist .status").text("✘")
+})
+
 Promise.all([binderPromise, decklistPromise]).then(([binder, decklist]) => {
+
+	if(!decklist.success){
+		return
+	}
+
 
 	let requiredCardsRemaining = decklist.data[0].cards
 	let availableCardsRemaining = binder
