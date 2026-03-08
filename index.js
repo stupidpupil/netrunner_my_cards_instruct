@@ -161,6 +161,7 @@ Promise.all([binderPromise, decklistPromise]).then(([binder, decklist]) => {
 		instructionHtml += "</div>"
 	})
 
+	$("#progress-info").remove()
 	$("body").append(instructionHtml)
 	$(".card.needed").first().parent()[0].scrollIntoView()
 })
