@@ -55,7 +55,7 @@ body{
 }
 
 .card.exists img{
-  filter: grayscale(70%) contrast(22%);
+  filter: grayscale(70%) contrast(22%) blur(0.5px);
   position: relative;
 }
 

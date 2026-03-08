@@ -135,6 +135,7 @@ Promise.all([binderPromise, decklistPromise]).then(([binder, decklist]) => {
 					classes.push("exists")
 
 					if(card.need_how_many > 0){
+						card.needed = true
 						classes.push("needed")
 					}
 				}
@@ -143,7 +144,14 @@ Promise.all([binderPromise, decklistPromise]).then(([binder, decklist]) => {
 				instructionHtml += "<div class='" + classes.join(" ") + " '>"
 
 				if(card){
-					instructionHtml += "<img loading='lazy' src='https://card-images.netrunnerdb.com/v2/medium/"+ card.code + ".jpg' >"
+
+					let imageUrl = "https://card-images.netrunnerdb.com/v2/small/"+ card.code + ".jpg"
+
+					if(card.needed){
+						imageUrl = "https://card-images.netrunnerdb.com/v2/large/"+ card.code + ".jpg"
+					}
+
+					instructionHtml += "<img loading='lazy' src='" + imageUrl + "' >"
 					instructionHtml += "<div class='info'>"
 					instructionHtml += "<div class='title'>" + card.title + "</div>"
 					instructionHtml	+= "<div class='how_many'>" + card.need_how_many + "</div>"
