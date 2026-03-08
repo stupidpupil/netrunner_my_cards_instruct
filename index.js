@@ -125,6 +125,8 @@ Promise.all([binderPromise, decklistPromise]).then(([binder, decklist]) => {
 					instructionHtml += "<div class='title'>" + card.title + "</div>"
 					instructionHtml	+= "<div class='how_many'>" + card.need_how_many + "</div>"
 					instructionHtml += "</div>"
+				}else{
+					instructionHtml += "<img src='blank.png' >"					
 				}
 
 				instructionHtml += "</div>"

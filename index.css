@@ -41,6 +41,7 @@ body{
 
 .card img{
   width: 100%;
+  aspect-ratio: 5 / 7 ;
   border-radius: 5%;
   z-index: 0;
 }
