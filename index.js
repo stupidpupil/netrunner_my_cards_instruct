@@ -1,8 +1,8 @@
 
 async function fetchBinder() {
 
-  const requestURL =
-    "https://script.googleusercontent.com/macros/echo?user_content_key=AY5xjrSv19c4oslohY0W1L9DxawzNLPZVAjDr8LuzsJpWXft-GBFnE6Tgjhqgxrz92puyoCpfqD4kOpz0ss3jntG0jtY1ZPMn4bq_EC10m1z_sBTtk6FGv16UUFzxeZKNKuJy-mukOFP2pJzc9_wPr05MBvToFBZJh5TDWbbTdH0HSen8wHBddVzRRoiOSVUSG2S0x569ZV_BE1i5QetGAvklCgXG3UNbV7wWXzw6bFyE1stelnXCZ4XAVclJ4mC_boILz2DxIP68z3rT4p89NS8mrOkMYJPY_HZ85G-QElC&lib=MaARNnBTJVwkY4ks6A52zkuVa7RvQokSP";
+  const requestURL = "binder.json"
+    //"https://script.googleusercontent.com/macros/echo?user_content_key=AY5xjrSv19c4oslohY0W1L9DxawzNLPZVAjDr8LuzsJpWXft-GBFnE6Tgjhqgxrz92puyoCpfqD4kOpz0ss3jntG0jtY1ZPMn4bq_EC10m1z_sBTtk6FGv16UUFzxeZKNKuJy-mukOFP2pJzc9_wPr05MBvToFBZJh5TDWbbTdH0HSen8wHBddVzRRoiOSVUSG2S0x569ZV_BE1i5QetGAvklCgXG3UNbV7wWXzw6bFyE1stelnXCZ4XAVclJ4mC_boILz2DxIP68z3rT4p89NS8mrOkMYJPY_HZ85G-QElC&lib=MaARNnBTJVwkY4ks6A52zkuVa7RvQokSP";
   const request = new Request(requestURL);
 
   const response = await fetch(request);
