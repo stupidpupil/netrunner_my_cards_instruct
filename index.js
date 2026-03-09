@@ -48,6 +48,8 @@ decklistPromise.then((decklist) => {
 	$("#fetching-decklist .status").text("✘")
 })
 
+let cardsInDecklist = []
+
 Promise.all([binderPromise, decklistPromise]).then(([binder, decklist]) => {
 
 	if(!decklist.success){
@@ -64,6 +66,7 @@ Promise.all([binderPromise, decklistPromise]).then(([binder, decklist]) => {
 	pagePairs = [
 		[[],]
 	]
+
 	let problems = []
 
 	while(Object.keys(requiredCardsRemaining).length > 0 && availableCardsRemaining.length > 0){
@@ -81,6 +84,8 @@ Promise.all([binderPromise, decklistPromise]).then(([binder, decklist]) => {
 					"Need " + nextCard.need_how_many + 
 					" copies of " + nextCard.title + ", only got " + nextCard.got_how_many)
 			}
+
+			cardsInDecklist.push(nextCard)
 
 			Reflect.deleteProperty(requiredCardsRemaining, nextCard.code)
 		}
@@ -108,6 +113,15 @@ Promise.all([binderPromise, decklistPromise]).then(([binder, decklist]) => {
 	})
 
 	console.log(problems)
+
+
+	let identityCard = cardsInDecklist.filter((c) => {return c.type_code == "identity"})[0]
+
+	if(identityCard){
+		$("head").append("<link rel='icon' type='image/svg+xml' href='nsg_visual_assets/factions/NSG_" + identityCard.faction_code.toUpperCase() + ".svg'>")
+	}
+
+	// Now to actually build the page!
 
 	let instructionHtml = ""
 	const cardIndex = Array(12).fill(0).map((_, index)=> index);
