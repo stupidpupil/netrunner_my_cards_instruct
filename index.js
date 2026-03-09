@@ -55,6 +55,8 @@ Promise.all([binderPromise, decklistPromise]).then(([binder, decklist]) => {
 	}
 
 
+	document.title = decklist.data[0].name + " | My Card Finder"
+
 	let requiredCardsRemaining = decklist.data[0].cards
 	let availableCardsRemaining = binder
 
