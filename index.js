@@ -171,7 +171,7 @@ Promise.all([binderPromise, decklistPromise]).then(([binder, decklist]) => {
 					instructionHtml += "<a href='https://netrunnerdb.com/en/card/" + card.code + "' target = '_blank'>"
 					instructionHtml += "<div class='info'>"
 					instructionHtml += "<div class='title'>" + card.title + "</div>"
-					instructionHtml	+= "<div class='how_many'>" + card.need_how_many + "</div>"
+					instructionHtml	+= "<div class='how_many'>" + "⦿".repeat(card.need_how_many) + "</div>"
 					instructionHtml += "</div>"
 					instructionHtml += "</a>"
 				}else{
