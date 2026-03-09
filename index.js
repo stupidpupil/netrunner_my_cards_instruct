@@ -141,7 +141,7 @@ Promise.all([binderPromise, decklistPromise]).then(([binder, decklist]) => {
 				}
 
 				
-				instructionHtml += "<div class='" + classes.join(" ") + " '>"
+				instructionHtml += "<div class='" + classes.join(" ") + " ' data-faction='" + card?.faction_code + "'>"
 
 				if(card){
 
